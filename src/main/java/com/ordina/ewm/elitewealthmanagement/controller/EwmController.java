@@ -18,25 +18,33 @@ public class EwmController {
         this.ewmService = ewmService;
     }
 
+    // get all the clients using the method made in the service
     @GetMapping
     public List<Client> getAllClients() {
         return ewmService.getAllClients();
     }
 
+    // get 1 client by id  using the method made in the service
     @GetMapping("/{clientId}")
     public Client getClientById(@PathVariable Long clientId) {
         return ewmService.getClientById(clientId);
     }
 
+
+    // add a client  using the method made in the service
     @PostMapping
     public Client addClient(@RequestBody Client client) {
         return ewmService.addClient(client);
     }
 
+
+    // update a client using the  method made in the service
     @PutMapping("/{clientId}")
     public Client updateClient(@PathVariable Long clientId, @RequestBody Client updatedClient) {
         return ewmService.updateClient(clientId, updatedClient);
     }
+
+    // delete a client using the method made in the service
 
     @DeleteMapping("/{clientId}")
     public void deleteClient(@PathVariable Long clientId) {
