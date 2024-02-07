@@ -37,6 +37,9 @@ public class EwmController {
         return ewmService.addClient(client);
     }
 
+    @PostMapping
+    public Client addClients(@RequestBody Client client) {return ewmService.addClients(client);}
+
 
     // update a client using the  method made in the service
     @PutMapping("/{clientId}")
@@ -50,5 +53,8 @@ public class EwmController {
     public void deleteClient(@PathVariable Long clientId) {
         ewmService.deleteClient(clientId);
     }
+
+    @DeleteMapping("/deleteClients")
+    public void deleteAllClients() { ewmService.deleteAllClients();}
 
 }

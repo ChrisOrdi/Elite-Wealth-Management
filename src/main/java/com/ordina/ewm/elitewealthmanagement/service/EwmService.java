@@ -31,6 +31,8 @@ public class EwmService {
         return ewmClientRepository.save(client);
     }
 
+    public Client addClients(Client client) {return ewmClientRepository.save(client);}
+
     public Client updateClient(Long clientId, Client updatedClient) {
         if (ewmClientRepository.existsById(clientId)) {
             updatedClient.setId(clientId);
@@ -42,5 +44,7 @@ public class EwmService {
     public void deleteClient(Long clientId) {
         ewmClientRepository.deleteById(clientId);
     }
+
+    public void deleteAllClients() {ewmClientRepository.deleteAll();}
 
 }
