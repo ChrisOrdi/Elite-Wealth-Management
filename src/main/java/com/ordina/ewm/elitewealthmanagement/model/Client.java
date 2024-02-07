@@ -4,7 +4,6 @@ package com.ordina.ewm.elitewealthmanagement.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "ewm_clients")
